@@ -43,18 +43,6 @@ slideRight.addEventListener("click", function(){
 }
 </code></pre>
 * 如果要求的左右滑动的按钮需要在窗口的外面,那么左右按钮就不能写在window窗口容器中,否则window窗口的``overflow: hidden``会将左右按钮隐藏掉,所以需要在window窗口容器外面再加一个容器``c-box``,左右按钮相对这个容器进行定位
-<pre><code>
-<div class="c-box">
-    <div class="slide-left" id="slideLeft"><i class="icon-L-Carousel"></i></div>
-    <div class="window">
-        <div class="content-wrap" id="contentWrap">
-            <div class="content-item left-content">111111111111</div>
-            <div class="content-item center-content">222222222222222</div>
-            <div class="content-item right-content">3333333333333333333</div>
-        </div>
-    </div>
-    <div class="slide-right" id="slideRight"><i class="icon-R-carousel"></i></div>
-</div>
-</code></pre>
 * 在关掉transition属性且位置重新定位后,需要重新开启transition属性,此时需要有一个时间的延迟,否则开启transition属性的操作会覆盖关闭transition的操作
 
+[demo展示](https://yy709593266.github.io/slide-around/)
