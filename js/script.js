@@ -215,8 +215,8 @@ var riskOption = initOptionStyle(
         barNormalEndColor: "#B02815",
         barEmphasisStartColor: "#E38D1A",
         barEmphasisEndColor: "#EB2E13",
-        lineNormalStartColor: "rgba(226,139,25,0.1)",
-        lineNormalEndColor: "rgba(228,57,20,0.1)",
+        lineNormalStartColor: "rgba(226,139,25,0.2)",
+        lineNormalEndColor: "rgba(228,57,20,0.2)",
         isShowXaxis: false
     }
 );
@@ -228,8 +228,8 @@ var peopleOption = initOptionStyle(
         barNormalEndColor: "#2047A9",
         barEmphasisStartColor: "#3871FF",
         barEmphasisEndColor: "#69FF96",
-        lineNormalStartColor: "rgba(56,113,255,0.1)",
-        lineNormalEndColor: "rgba(105,255,150,0.1)",
+        lineNormalStartColor: "rgba(56,113,255,0.2)",
+        lineNormalEndColor: "rgba(105,255,150,0.2)",
         isShowXaxis: false
     }
 );
