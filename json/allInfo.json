@@ -1,0 +1,105 @@
+{
+  "success": true,
+  "message": null,
+  "data": [
+      {
+          "name": "铜仁",
+          "alarm": "50",
+          "risk": "60",
+          "people": "80",
+          "blacklist": "120",
+          "code": "520600",
+          "type": "0"
+      },
+      {
+          "name": "碧江",
+          "alarm": "20",
+          "risk": "40",
+          "people": "70",
+          "blacklist": "100",
+          "code": "520602",
+          "type": "1"
+      },
+      {
+          "name": "万山",
+          "alarm": "30",
+          "risk": "30",
+          "people": "70",
+          "blacklist": "110",
+          "code": "520603",
+          "type": "1"
+      },
+      {
+          "name": "江口",
+          "alarm": "20",
+          "risk": "50",
+          "people": "60",
+          "blacklist": "100",
+          "code": "520621",
+          "type": "1"
+      },
+      {
+          "name": "玉屏",
+          "alarm": "30",
+          "risk": "50",
+          "people": "80",
+          "blacklist": "90",
+          "code": "520622",
+          "type": "1"
+      },
+      {
+          "name": "石阡",
+          "alarm": "80",
+          "risk": "40",
+          "people": "60",
+          "blacklist": "110",
+          "code": "520623",
+          "type": "1"
+      },
+      {
+          "name": "思南",
+          "alarm": "30",
+          "risk": "30",
+          "people": "70",
+          "blacklist": "120",
+          "code": "520624",
+          "type": "1"
+      },
+      {
+          "name": "印江",
+          "alarm": "30",
+          "risk": "70",
+          "people": "80",
+          "blacklist": "90",
+          "code": "520625",
+          "type": "1"
+      },
+      {
+          "name": "德江",
+          "alarm": "10",
+          "risk": "30",
+          "people": "100",
+          "blacklist": "110",
+          "code": "520626",
+          "type": "1"
+      },
+      {
+          "name": "沿河",
+          "alarm": "20",
+          "risk": "50",
+          "people": "70",
+          "blacklist": "120",
+          "code": "520627",
+          "type": "1"
+      },
+      {
+          "name": "松桃",
+          "alarm": "30",
+          "risk": "30",
+          "people": "70",
+          "blacklist": "140",
+          "code": "520628",
+          "type": "1"
+      }
+  ]
+}

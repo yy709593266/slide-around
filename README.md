@@ -44,5 +44,11 @@ slideRight.addEventListener("click", function(){
 </code></pre>
 * 如果要求的左右滑动的按钮需要在窗口的外面,那么左右按钮就不能写在window窗口容器中,否则window窗口的``overflow: hidden``会将左右按钮隐藏掉,所以需要在window窗口容器外面再加一个容器``c-box``,左右按钮相对这个容器进行定位
 * 在关掉transition属性且位置重新定位后,需要重新开启transition属性,此时需要有一个时间的延迟,否则开启transition属性的操作会覆盖关闭transition的操作
+* 获取元素的样式时,如果是外联css文件中的样式方法为:
+<pre><code>
+itemWidth = Number(window.getComputedStyle(document.getElementsByClassName('content-item')[0], null)['width'].split('px')[0]);
+</code></pre>
+``ele.style.left``只能获取元素的内联元素,设置时也是设置的内联样式
+
 
 [demo展示](https://yy709593266.github.io/slide-around/)
