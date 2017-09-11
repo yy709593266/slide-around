@@ -46,9 +46,13 @@ body {
     height: 100%;
     position: relative;
     left: -900px;
+    color: #fff;
 }
 .left-content, .center-content, .right-content{
     width: 900px;
     height: 100%;
     float: left;
+}
+.right-content {
+    text-align: center;
 }

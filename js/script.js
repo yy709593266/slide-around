@@ -55,7 +55,7 @@ function SlideAround(){
 function initOptionStyle(options){
     var optionItem = {
         title: {
-            text: options.title,
+            text: options.title,        //标题及其样式
             textStyle: {
                 color: '#68A1F5',
                 fontSize: 12,
@@ -68,21 +68,23 @@ function initOptionStyle(options){
                 type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
         },
-        grid: {left: '0', top: '30', right: '0', bottom: '10', containLabel: true},
+        grid: {left: '0', top: '30', right: '0', bottom: '30', containLabel: true},         //图表的位置,通过修改top值可以看出效果(top为0时,柱状图的上标会被切掉)
         xAxis: [{
-            show: options.isShowXaxis,
+            show: options.isShowXaxis,              //是否显示横坐标刻度
             type: 'category',
             axisTick: {
                 alignWithLabel: true, lineStyle: {
-                    length: 15, color: options.axisTickColor || ""
+                    length: 15, color: "#fff"
                 }
             },
             axisLine: {
-                show: false
+                alignWithLabel: true, lineStyle: {
+                    length: 15, color: "#fff"
+                }
             },
             splitLine: {
                 show: true, lineStyle: {
-                    color: options.lineColor.slice(1, options.lineColor.length - 1)
+                    color: "options.lineColor.slice(1, options.lineColor.length - 1)"       //纵向分隔线
                 }
             },
             axisLabel: {rotate: 90, color: ['#D4E2FF']}
@@ -105,7 +107,7 @@ function initOptionStyle(options){
         series: [
             {
                 name: options.title,
-                type: 'bar',
+                type: 'bar',                        //柱状图
                 barMinHeight: 10,
                 barWidth: '28',
                 itemStyle: {
@@ -127,7 +129,7 @@ function initOptionStyle(options){
                     }
                 },
                 markPoint: {
-                    symbol: 'pin',
+                    symbol: 'pin',                  //柱状图上的强调显示,大头针样式
                     symbolSize: [20, 20],
                     label: {
                         normal: {
@@ -143,10 +145,10 @@ function initOptionStyle(options){
                         }
                     },
                     data: [
-                        {type: 'max'}
+                        {type: 'max'}               //最大值自动添加强调样式
                     ]
                 },
-                    label: {
+                    label: {                        //数值显示
                     normal: {
                         show: true,
                         color: 'rgba(255, 255, 255, 0)',
@@ -160,7 +162,7 @@ function initOptionStyle(options){
                 }
             },
             {
-                type: 'line',
+                type: 'line',                       //折线图(和柱状图重复显示)
                 symbol: 'none',
                 smooth: true,
                 lineStyle: {
@@ -168,7 +170,7 @@ function initOptionStyle(options){
                         width: 0
                     }
                 },
-                areaStyle: {
+                areaStyle: {                        //折线图区域面积样式
                     normal: {
                         color: {
                             x: 0,
@@ -189,24 +191,8 @@ function initOptionStyle(options){
     return optionItem;
 }
 // 网格渐变色
-var alarmLineColors = ['rgba(171,36,31,0.4)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)'];
 var riskLineColors = ['rgba(177,110,20,0.4)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)'];
-var peopleLineColors = ['rgba(71,183,105,0.4)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)'];
 
-// 初始化一个表格参数
-var alarmOption = initOptionStyle(
-    {
-        title: '一级报警数',
-        lineColor: alarmLineColors,
-        barNormalStartColor: "#6B20BF",
-        barNormalEndColor: "#AC241E",
-        barEmphasisStartColor: "#9949F3",
-        barEmphasisEndColor: "#FF4C44",
-        lineNormalStartColor: "rgba(254,76,70,0.1)",
-        lineNormalEndColor: "rgba(151,71,234,0.1)",
-        isShowXaxis: false
-    }
-);
 var riskOption = initOptionStyle(
     {
         title: '高危人群数',
@@ -217,26 +203,10 @@ var riskOption = initOptionStyle(
         barEmphasisEndColor: "#EB2E13",
         lineNormalStartColor: "rgba(226,139,25,0.2)",
         lineNormalEndColor: "rgba(228,57,20,0.2)",
-        isShowXaxis: false
+        isShowXaxis: true
     }
 );
-var peopleOption = initOptionStyle(
-    {
-        title: '流动人口数',
-        lineColor: peopleLineColors,
-        barNormalStartColor: "#47B869",
-        barNormalEndColor: "#2047A9",
-        barEmphasisStartColor: "#3871FF",
-        barEmphasisEndColor: "#69FF96",
-        lineNormalStartColor: "rgba(56,113,255,0.2)",
-        lineNormalEndColor: "rgba(105,255,150,0.2)",
-        isShowXaxis: false
-    }
-);
-// echarts容器
-var alarmChart = echarts.init(document.getElementById('leftContent'));
 var riskChart = echarts.init(document.getElementById('centerContent'));
-var peopleChart = echarts.init(document.getElementById("rightContent"));
 // 模拟数据
 var allInfo = {
     "success": true,
@@ -343,33 +313,18 @@ var allInfo = {
         }
     ]
 };
-var optionArr = [alarmOption, riskOption, peopleOption];
-for(var i = 0, len = optionArr.length; i < len; i++ ) {
-    optionArr[i].xAxis[0].data = allInfo.data.map(function(u) {
-        return u.name;
-    });
-}
-for(var j = 0; j < 2; j++) {
-    alarmOption.series[j].data = allInfo.data.map(function(v){
-        return v.alarm
-    });
-}
+riskOption.xAxis[0].data = allInfo.data.map(function(u) {
+    return u.name;
+});
 for(var k = 0; k < 2; k++) {
     riskOption.series[k].data = allInfo.data.map(function(w){
         return w.risk
     });
 }
-for(var h = 0; h < 2; h++) {
-    peopleOption.series[h].data = allInfo.data.map(function(y){
-        return y.people
-    });
-}
-alarmChart.setOption(alarmOption);
 riskChart.setOption(riskOption);
-peopleChart.setOption(peopleOption);
 // 图表点击事件
 // alarmChart.on('click', function(params){
-
+    
 // });
 
 new SlideAround();
