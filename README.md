@@ -52,3 +52,6 @@ itemWidth = Number(window.getComputedStyle(document.getElementsByClassName('cont
 
 
 [demo展示](https://yy709593266.github.io/slide-around/)
+
+## 疑惑
+如果每页内容都是一个echarts表格的话,在循环切换到第一页内容的时候表格并不会显示出来(然而此时查看元素,内容是图表元素,但就是显示不出来),再点击下一张第一页的表格才能出来

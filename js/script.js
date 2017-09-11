@@ -148,11 +148,9 @@ function initOptionStyle(options){
                         {type: 'max'}               //最大值自动添加强调样式
                     ]
                 },
-                    label: {                        //数值显示
+                label: {                            //数值显示,如果hover上去的时候没有数值显示的话,可以在normal中设置show为true,同时color透明度设置为0
                     normal: {
-                        show: true,
-                        color: 'rgba(255, 255, 255, 0)',
-                        position: 'top'
+                        show: false
                     },
                     emphasis: {
                         show: true,
@@ -191,8 +189,21 @@ function initOptionStyle(options){
     return optionItem;
 }
 // 网格渐变色
+// var alarmLineColor = ['rgba(171,36,31,0.4)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)', 'rgba(70,144,255,0.0)'];
 var riskLineColors = ['rgba(177,110,20,0.4)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)', 'rgba(70,144,255,0.1)'];
-
+// var alarmOption = initOptionStyle(
+//     {
+//         title: '一级报警数',
+//         lineColor: alarmLineColor,
+//         barNormalStartColor: "#6B20BF",
+//         barNormalEndColor: "#AC241E",
+//         barEmphasisStartColor: "#9949F3",
+//         barEmphasisEndColor: "#FF4C44",
+//         lineNormalStartColor: "rgba(254,76,70,0.1)",
+//         lineNormalEndColor: "rgba(151,71,234,0.1)",
+//         isShowXaxis: false
+//     }
+// );
 var riskOption = initOptionStyle(
     {
         title: '高危人群数',
@@ -206,6 +217,7 @@ var riskOption = initOptionStyle(
         isShowXaxis: true
     }
 );
+// var alarmChart = echarts.init(document.getElementById('leftContent'));
 var riskChart = echarts.init(document.getElementById('centerContent'));
 // 模拟数据
 var allInfo = {
@@ -313,6 +325,16 @@ var allInfo = {
         }
     ]
 };
+
+// alarmOption.xAxis[0].data = allInfo.data.map(function(u) {
+//     return u.name;
+// });
+// for(var k = 0; k < 2; k++) {
+//     alarmOption.series[k].data = allInfo.data.map(function(w){
+//         return w.alarm
+//     });
+// }
+
 riskOption.xAxis[0].data = allInfo.data.map(function(u) {
     return u.name;
 });
@@ -321,9 +343,10 @@ for(var k = 0; k < 2; k++) {
         return w.risk
     });
 }
+// alarmChart.setOption(alarmOption);
 riskChart.setOption(riskOption);
 // 图表点击事件
-// alarmChart.on('click', function(params){
+// riskChart.on('click', function(params){
     
 // });
 
