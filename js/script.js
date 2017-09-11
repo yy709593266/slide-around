@@ -109,7 +109,7 @@ function initOptionStyle(options){
                 name: options.title,
                 type: 'bar',                        //柱状图
                 barMinHeight: 10,
-                barWidth: '28',
+                barWidth: '20',
                 itemStyle: {
                     normal: {
                         barBorderRadius: [4, 4, 0, 0], color: {
