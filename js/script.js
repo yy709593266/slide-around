@@ -164,7 +164,7 @@ function initOptionStyle(options){
             {
                 type: 'line',                       //折线图(和柱状图重复显示)
                 symbol: 'none',
-                smooth: true,
+                smooth: true,                       //平滑曲线
                 lineStyle: {
                     normal: {
                         width: 0
